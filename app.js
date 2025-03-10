@@ -7,22 +7,18 @@ console.log(age);
 
 // Q2 配列
 let languages = ['JavaScript', 'PHP', 'Ruby', 'Python', 'Go'];
-console.log('languages[0] => ', languages[0]);
-console.log('languages[3] => ', languages[3]);
-let template = 'JavaScript';
-let template2 = 'Python';
-let templateText = `私の好きな言語は${template}です。次は${template2}を勉強してみたいです。`;
+let templateText = `私の好きな言語は${languages[0]}です。次は${languages[3]}を勉強してみたいです。`;
 console.log(templateText);
 
 // Q3 オブジェクト
-// let user = {
-//   name: 'John',
-//   age: 26,
-//   bloodType: 'A',
-//   favorite: 'card',
-// };
-// console.log(user.age);
-
+let user = {
+  name: 'John',
+  age: 26,
+  bloodType: 'A',
+  favorite: 'card',
+};
+  console.log(user.age);
+  
 // Q4 配列 × オブジェクト
 let playerList = [
   {
@@ -58,46 +54,31 @@ let sayWorld = function() {
 sayWorld();
 
 // Q7 メソッド
-let user = {
-  name: 'John',
-  age: 26,
-  bloodType: 'A',
-  favorite: 'card',
-  birthday: '2000-09-27',
-  sayHello: function() {
-    console.log('Hello！');
-  }
-};
+user.birthday = '2000-09-27';
+user.sayHello = function() {
+  console.log('Hello！');
+}
 user.sayHello();
 
 // Q8 引数
-// let calc = {
-//   add: function(x, y) {
-//     console.log(3 + 4);
-//   }
-// }
-// calc.add();
-
-// let calc = {
-//   subtract: function(x, y) {
-//     console.log(11 - 1);
-//   }
-// }
-// calc.subtract();
-
-// let calc = {
-//   multiply: function(x, y) {
-//     console.log(7 * 7);
-//   }
-// }
-// calc.multiply();
-
 let calc = {
-  divide: function(x , y) {
-    console.log(25 / 5);
+  add: function(x, y) {
+    console.log(x + y);
+  },
+  subtract: function(x, y) {
+    console.log(x - y);
+  },
+  multiply: function(x, y) {
+    console.log(x * y);
+  },
+  divide: function(x, y) {
+    console.log(x / y);
   }
 }
-calc.divide();
+calc.add(3, 4);
+calc.subtract(20, 10);
+calc.multiply(7, 7);
+calc.divide(25, 5);
 
 // Q9 返り値
 function remainder(x, y) {
@@ -124,7 +105,7 @@ console.log('random => ', random);
 function setTimeout () {
   console.log('Hello World!');
 }
-setTimeout (3000);
+setTimeout ('Hallo World!', 3000);
 
 // Q3 if
 let num = 1;
@@ -149,7 +130,7 @@ for (let i = 0; i < 7; i++) {
   if (typeof mixed[i] === 'number') {
     if (mixed[i] % 2 === 0) {
       console.log('even');
-    } if (mixed[i] % 2 === 1) {
+    } else {
         console.log('odd');
     }
   } else {
